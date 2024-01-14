@@ -6,13 +6,13 @@ import java.util.*;
 public class Movie{
   //init proprities  
   private static Map<String,Movie> movieMap;
-  private static ArrayList<Movie> movieList;
-  private static Set<Movie> movieSet;//list or hashmap or hashset
+  private static ArrayList<Movie> movieList = new ArrayList<>();//list or hashmap or hashset
   private String title;
   private String description;
   private Genre genre;
   private String imgPath;
   private float rating;
+  private Ticketing ticketing;
 
   public Movie(String title, String description, String ImgPath, Genre genre, float rating) {
     this.title = title;
@@ -20,30 +20,21 @@ public class Movie{
     this.imgPath = ImgPath;
     this.genre = genre;
     this.rating = rating;
-    this.init();
     this.addMovie();
   }
   
   //adding Movie to static sets and maps
   private void addMovie(){
       movieMap.put(this.title, this);
-      movieSet.add(this);
       movieList.add(this);
   }
-  
-  private void init(){
-    movieList = new ArrayList<>();
-  }
-  
+
   //setters & getters
   public static Map<String, Movie> getMovieMap() {
     return movieMap;
   }
   public static ArrayList<Movie> getMovieList() {
     return movieList;
-  }
-  public static Set<Movie> getMovieSet() {
-    return movieSet;
   }
   public String getTitle() {
     return title;

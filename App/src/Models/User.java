@@ -3,9 +3,9 @@ package Models;
 import java.util.*;
 
 public class User{
-  private static Map<String,User> userMap;
-  private static ArrayList<User> userList;
-  private static Set<User> userSet;//list or hashmap or hashset
+  private static Map<String,User> userMap = new HashMap<>();
+  private static ArrayList<User> userList = new ArrayList<>();//list or hashmap or hashset
+  public static int userCount = 0;
   private String username;
   private String password;
   private String imgPath;
@@ -17,19 +17,18 @@ public class User{
     this.imgPath = imgPath;
     this.init();
     this.addUser();
+    userCount++;
   }
   
-  //to initialize sets and maps
+  //to initialize
   private void init() {
-    userList = new ArrayList<>();
     booking = new Booking(this);
   }
 
   //adding User to static sets and maps
   private void addUser(){
-      userMap.put(this.username, this);
-      userSet.add(this);
-      userList.add(this);
+    userMap.put(this.username, this);
+    userList.add(this);
   }
   
   //getters & setters
@@ -38,9 +37,6 @@ public class User{
   }
   public static ArrayList<User> getUserList() {
     return userList;
-  }
-  public static Set<User> getUserSet() {
-    return userSet;
   }
   public String getUsername() {
     return username;
