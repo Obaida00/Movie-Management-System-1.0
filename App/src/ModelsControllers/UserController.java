@@ -1,4 +1,4 @@
-package Controllers;
+package ModelsControllers;
 
 import Models.*;
 import java.util.Map;

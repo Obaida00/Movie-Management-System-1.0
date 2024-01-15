@@ -3,7 +3,7 @@
  * almelhemo@gmail.com
  */
 
-import Controllers.UserController;
+import ModelsControllers.UserController;
 import Models.*;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -92,5 +92,5 @@ public class GlobalITest {
     assertEquals("valid Login after signup test", true, newUserLogin);
   }
 
-
+  
 }
